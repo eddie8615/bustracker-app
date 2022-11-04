@@ -17,8 +17,18 @@
             android:id="@+id/toolbar"
             app:titleTextColor="@color/white"
             android:translationZ="10dp"
+            android:padding="4dp"
             app:title="">
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_view"
+                app:queryHint="djhdjdj"
+                app:iconifiedByDefault="false"
+                android:layout_marginHorizontal="60dp"/>
+
         </androidx.appcompat.widget.Toolbar>
+
     </com.google.android.material.appbar.AppBarLayout>
 
 </RelativeLayout>
