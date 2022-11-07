@@ -14,42 +14,54 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-            <com.google.android.material.appbar.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appbar">
+            <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/appbar">
-                <androidx.appcompat.widget.Toolbar
+                android:layout_height="?attr/actionBarSize"
+                android:id="@+id/toolbar"
+                app:titleTextColor="@color/white"
+                app:navigationIcon="@drawable/ic_baseline_menu_24"
+                android:elevation="4dp">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:id="@+id/toolbar"
-                    app:titleTextColor="@color/white"
-                    app:navigationIcon="@drawable/ic_baseline_menu_24"
-                    android:elevation="4dp">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <androidx.appcompat.widget.SearchView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:id="@+id/search_view"
-                            android:layout_toStartOf="@id/edit_button"
-                            app:queryHint="djhdjdj"
-                            app:searchIcon="@null"
-                            app:iconifiedByDefault="false"/>
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.SearchView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/search_view"
+                        android:layout_toStartOf="@id/edit_button"
+                        app:queryHint="@string/bus_search_placeholder"
+                        app:searchIcon="@null"
+                        app:iconifiedByDefault="false"/>
 
-                        <Button
-                            android:layout_width="60dp"
-                            android:layout_height="match_parent"
-                            android:id="@+id/edit_button"
-                            android:layout_alignParentEnd="true"
-                            android:text="edit"
-                            android:background="@android:color/transparent"
-                            />
-                    </RelativeLayout>
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/edit_button"
+                        android:layout_alignParentEnd="true"
+                        android:text="edit"
+                        android:background="@android:color/transparent"
+                        />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
 
-                </androidx.appcompat.widget.Toolbar>
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewpager">
 
-            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.viewpager2.widget.ViewPager2>
+
+        <com.make.dots.dotsindicator.DotsIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dots_indicator"
+            android:background="@drawable/dots_background"/>
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

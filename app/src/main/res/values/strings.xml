@@ -2,4 +2,9 @@
     <string name="app_name">BusTracker</string>
     <string name="nav_drawer_open">Open navigation drawer</string>
     <string name="nav_drawer_close">Close navigation drawer</string>
+
+    <string name="no_bus_stop">No bus stop nearby</string>
+    <string name="bus_stop_nearby">Nearby Stops</string>
+
+    <string name="bus_search_placeholder">Search bus number</string>
 </resources>

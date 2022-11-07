@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BusTracker</string>
+    <string name="nav_drawer_open">Open navigation drawer</string>
+    <string name="nav_drawer_close">Close navigation drawer</string>
+
+    <string name="bus_search_placeholder">버스 번호를 검색하세요.</string>
+    <string name="no_bus_stop">주변에 가까운 정류장이 없습니다.</string>
+    <string name="bus_stop_nearby">주변 정류장</string>
+</resources>
