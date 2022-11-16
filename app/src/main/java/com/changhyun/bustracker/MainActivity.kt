@@ -1,10 +1,12 @@
 package com.changhyun.bustracker
 
 import Adapters.ViewPagerAdapter
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import android.util.TypedValue
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -17,6 +19,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 
 class MainActivity : AppCompatActivity() {
@@ -48,10 +51,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun renderViewPager(){
         viewPager = findViewById<ViewPager2>(R.id.viewpager)
+        val dip = 14f
+        val r: Resources = resources
+        val px = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            dip,
+            r.displayMetrics
+        ).toInt()
+        viewPager.setPageTransformer(MarginPageTransformer(px))
         val adapter = ViewPagerAdapter(this)
-        adapter.addFragment(MapFragment())
         viewPager.adapter = adapter
     }
+
     private fun renderToolbar(){
         val tb = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(tb)

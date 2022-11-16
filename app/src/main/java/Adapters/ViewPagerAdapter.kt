@@ -1,28 +1,24 @@
 package Adapters
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import Fragments.DummyFragment
+import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.changhyun.bustracker.R
+import Fragments.MapFragment
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
 
-    private var fragments : MutableList<Fragment> = mutableListOf<Fragment>()
-
     override fun getItemCount(): Int {
-        return fragments.size
+        return 2
     }
 
     override fun createFragment(position: Int): Fragment {
-        return fragments.get(position)
-    }
-
-    fun addFragment(fragment: Fragment){
-        fragments.add(fragment)
+        return when(position){
+            0 -> { MapFragment() }
+            1 -> { DummyFragment() }
+            else -> {throw Resources.NotFoundException("Position not found")}
+        }
     }
 }
